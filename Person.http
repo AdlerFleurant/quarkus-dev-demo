@@ -1,0 +1,30 @@
+###
+GET http://localhost:8080/persons
+
+###
+POST http://localhost:8080/persons
+Content-Type: application/json
+
+{
+"name":"Adler Fleurant",
+"birth": "2011-11-11"
+}
+
+###
+POST http://localhost:8080/persons
+Content-Type: application/json
+
+{
+  "name": "Core",
+  "birth": "2011-11-11",
+  "sex": "M"
+}
+
+###
+GET http://localhost:8080/persons/3
+
+###
+GET http://localhost:8080/persons/count
+
+###
+GET http://localhost:8080/persons/search/Core
