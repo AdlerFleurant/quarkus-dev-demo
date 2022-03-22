@@ -1,0 +1,5 @@
+###
+GET http://localhost:8080/entry/A Swiftly Tilting Planet
+
+###
+GET http://localhost:8080/entry

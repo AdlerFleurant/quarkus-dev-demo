@@ -27,6 +27,12 @@ export TESTCONTAINERS_RYUK_DISABLED=true
 
 Add this to your `.bash_profile` or your `zshrc` file.
 
+This configuration does not work with every project on this demonstration and is expected to not be needed in the future.
+
+## Setting podman (as docker) on Linux
+
+Follow the instructions outline in this Quarkus Blog Post](https://quarkus.io/blog/quarkus-devservices-testcontainers-podman/).
+
 ## Components
 
 * person: A quarkus Rest Service connected to a database
@@ -34,7 +40,17 @@ Add this to your `.bash_profile` or your `zshrc` file.
 * inventory-outgoing: A service generating inventory items sending them to a queue
 * inventory: A Rest Service exploring the inventory services.
 
-## Running the application in dev mode
+
+As of Quarkus 2.7.5, the Redis Dev Service contains a bug where connecting to an existing dev service will fail with due to : https://github.com/patrox/quarkus/blob/main/extensions/redis-client/deployment/src/main/java/io/quarkus/redis/client/deployment/DevServicesProcessor.java#L157
+
+## Rest Service connected to 
+
+Start by running the person REST Service in Dev Mode
+
+```bash
+./gradlew person:quarkusDev
+```
+
 
 You can run your application in dev mode that enables live coding using:
 ```shell script

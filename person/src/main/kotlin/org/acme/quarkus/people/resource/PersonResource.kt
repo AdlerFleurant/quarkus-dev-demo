@@ -1,5 +1,6 @@
 package org.acme.quarkus.people.resource
 
+import io.quarkus.logging.Log
 import org.acme.quarkus.people.entity.Person
 import java.net.URI
 import javax.transaction.Transactional
@@ -25,6 +26,7 @@ class PersonResource {
     @Transactional
     fun create(person: Person): Response {
         person.persist()
+        Log.info("Creating: person ${person.name}")
         return Response.created(URI.create("/persons/" + person.id)).build()
     }
 
