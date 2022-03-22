@@ -27,7 +27,12 @@ export TESTCONTAINERS_RYUK_DISABLED=true
 
 Add this to your `.bash_profile` or your `zshrc` file.
 
-This configuration does not work with every project on this demonstration and is expected to not be needed in the future.
+Under MacOS M1 Chip additional configuration is needed
+
+```zsh
+podman machine ssh sudo rpm-ostree install qemu-user-static
+podman machine ssh sudo systemctl reboot
+```
 
 ## Setting podman (as docker) on Linux
 
